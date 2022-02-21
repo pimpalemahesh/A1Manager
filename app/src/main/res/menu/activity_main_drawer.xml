@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_baseline_home_24"
+            android:title="@string/menu_home" />
+
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_camera" />
+
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/menu_gallery" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_video" />
+
+        <item android:id="@+id/nav_music"
+            android:icon="@drawable/ic_baseline_music_note_24"
+            android:title="@string/menu_music"/>
+
+        <item android:id="@+id/nav_call"
+            android:icon="@drawable/ic_baseline_call_24"
+            android:title="@string/menu_call"/>
+
+        <item android:id="@+id/nav_video_call"
+            android:icon="@drawable/ic_baseline_video_call_24"
+            android:title="@string/menu_video_call"/>
+
+        <item android:id="@+id/nav_pdf_scanner"
+            android:icon="@drawable/ic_baseline_picture_as_pdf_24"
+            android:title="@string/menu_pdf_scanner"/>
+
+        <item android:id="@+id/nav_calculator"
+            android:icon="@drawable/ic_baseline_calculate_24"
+            android:title="@string/menu_calculator"/>
+
+        <item
+            android:id="@+id/nav_imageCompressor"
+            android:icon="@drawable/ic_baseline_image_compressor_24"
+            android:title="@string/menu_image_compressor"/>
+
+        <item
+            android:id="@+id/nav_qrcode_scanner"
+            android:icon="@drawable/ic_baseline_qr_code_scanner_24"
+            android:title="@string/menu_qr_code_scanner"/>
+
+    </group>
+</menu>

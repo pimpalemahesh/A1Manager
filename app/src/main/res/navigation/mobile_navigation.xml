@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.myinnovation.ai1manager.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.myinnovation.ai1manager.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_camera"
+        android:name="com.myinnovation.ai1manager.ui.Camera.CameraFragment"
+        android:label="@string/menu_camera"
+        tools:layout="@layout/fragment_camera" />
+
+    <fragment
+        android:id="@+id/nav_music"
+        android:name="com.myinnovation.ai1manager.ui.Music.MusicFragment"
+        android:label="@string/menu_music"
+        tools:layout="@layout/fragment_music" />
+
+    <fragment
+        android:id="@+id/nav_call"
+        android:name="com.myinnovation.ai1manager.ui.Call.CallFragment"
+        android:label="@string/menu_call"
+        tools:layout="@layout/fragment_call" />
+
+    <fragment
+        android:id="@+id/nav_calculator"
+        android:name="com.myinnovation.ai1manager.ui.Calculator.CalculatorFragment"
+        android:label="@string/menu_calculator"
+        tools:layout="@layout/fragment_calculator" />
+
+    <fragment
+        android:id="@+id/nav_qrcode_scanner"
+        android:name="com.myinnovation.ai1manager.ui.QRCode.QRCodeFragment"
+        android:label="@string/menu_qr_code_scanner"
+        tools:layout="@layout/fragment_qr_code" />
+
+    <fragment
+        android:id="@+id/nav_pdf_scanner"
+        android:name="com.myinnovation.ai1manager.ui.PDF.PDFFragment"
+        android:label="@string/menu_pdf_scanner"
+        tools:layout="@layout/fragment_pdf" />
+</navigation>
