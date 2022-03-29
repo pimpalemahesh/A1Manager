@@ -24,6 +24,12 @@
         tools:layout="@layout/fragment_camera" />
 
     <fragment
+        android:id="@+id/nav_video"
+        android:name="com.myinnovation.ai1manager.ui.Video.VideoFragment"
+        android:label="@string/menu_video"
+        tools:layout="@layout/fragment_video" />
+
+    <fragment
         android:id="@+id/nav_music"
         android:name="com.myinnovation.ai1manager.ui.Music.MusicFragment"
         android:label="@string/menu_music"

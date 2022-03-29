@@ -5,21 +5,27 @@
       <map>
         <entry key="..\:/AndroidStudioProjects/AI1Manager2/app/src/main/res/drawable/ic_baseline_refresh_24.xml" value="0.2703125" />
         <entry key="..\:/AndroidStudioProjects/AI1Manager2/app/src/main/res/layout/activity_image_view.xml" value="0.22146739130434784" />
-        <entry key="..\:/AndroidStudioProjects/AI1Manager2/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/AI1Manager2/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/AndroidStudioProjects/AI1Manager2/app/src/main/res/layout/activity_pdfview.xml" value="0.23596014492753623" />
         <entry key="..\:/AndroidStudioProjects/AI1Manager2/app/src/main/res/layout/activity_song_player.xml" value="0.12360688956433637" />
+        <entry key="..\:/AndroidStudioProjects/AI1Manager2/app/src/main/res/layout/activity_video_view.xml" value="0.21105072463768115" />
         <entry key="..\:/AndroidStudioProjects/AI1Manager2/app/src/main/res/layout/app_bar_main.xml" value="0.18432971014492755" />
         <entry key="..\:/AndroidStudioProjects/AI1Manager2/app/src/main/res/layout/content_main.xml" value="0.24048913043478262" />
         <entry key="..\:/AndroidStudioProjects/AI1Manager2/app/src/main/res/layout/fragment_calculator.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProjects/AI1Manager2/app/src/main/res/layout/fragment_call.xml" value="0.20199275362318841" />
         <entry key="..\:/AndroidStudioProjects/AI1Manager2/app/src/main/res/layout/fragment_gallery.xml" value="0.12360688956433637" />
+        <entry key="..\:/AndroidStudioProjects/AI1Manager2/app/src/main/res/layout/fragment_home.xml" value="0.12360688956433637" />
         <entry key="..\:/AndroidStudioProjects/AI1Manager2/app/src/main/res/layout/fragment_music.xml" value="0.13302752293577982" />
         <entry key="..\:/AndroidStudioProjects/AI1Manager2/app/src/main/res/layout/fragment_pdf.xml" value="0.24048913043478262" />
         <entry key="..\:/AndroidStudioProjects/AI1Manager2/app/src/main/res/layout/fragment_qr_code.xml" value="0.23596014492753623" />
+        <entry key="..\:/AndroidStudioProjects/AI1Manager2/app/src/main/res/layout/fragment_video.xml" value="0.21105072463768115" />
         <entry key="..\:/AndroidStudioProjects/AI1Manager2/app/src/main/res/layout/single_contact_layout.xml" value="0.20199275362318841" />
         <entry key="..\:/AndroidStudioProjects/AI1Manager2/app/src/main/res/layout/single_image_layout.xml" value="0.22146739130434784" />
         <entry key="..\:/AndroidStudioProjects/AI1Manager2/app/src/main/res/layout/single_music_list_layout.xml" value="0.23596014492753623" />
         <entry key="..\:/AndroidStudioProjects/AI1Manager2/app/src/main/res/layout/single_pdf_layout.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProjects/AI1Manager2/app/src/main/res/layout/single_video_layout.xml" value="0.21105072463768115" />
+        <entry key="..\:/AndroidStudioProjects/AI1Manager2/app/src/main/res/menu/activity_main_drawer.xml" value="0.25416666666666665" />
+        <entry key="..\:/AndroidStudioProjects/AI1Manager2/app/src/main/res/menu/main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Mahesh/Documents/AI1Manager2/app/src/main/res/drawable-v24/ic_launcher_round.xml" value="0.2703125" />
         <entry key="..\:/Users/Mahesh/Documents/AI1Manager2/app/src/main/res/drawable/ic_baseline_clear_24.xml" value="0.2703125" />
         <entry key="..\:/Users/Mahesh/Documents/AI1Manager2/app/src/main/res/drawable/ic_baseline_fast_forward_24.xml" value="0.2703125" />

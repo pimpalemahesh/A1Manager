@@ -1,13 +1,9 @@
-package com.myinnovation.ai1manager.ui.gallery;
+package com.myinnovation.ai1manager.ui.Video;
 
 import android.Manifest;
-import android.app.Activity;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
-import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,32 +11,40 @@ import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.MultiplePermissionsReport;
 import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionDeniedResponse;
+import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
-import com.myinnovation.ai1manager.databinding.FragmentGalleryBinding;
-import com.myinnovation.ai1manager.ui.Music.MusicAdapter;
+import com.karumi.dexter.listener.single.PermissionListener;
+import com.myinnovation.ai1manager.databinding.FragmentMusicBinding;
+import com.myinnovation.ai1manager.databinding.FragmentVideoBinding;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GalleryFragment extends Fragment {
+public class VideoFragment extends Fragment {
 
-    private FragmentGalleryBinding binding;
-    private ArrayList<File> imageList;
+    private FragmentVideoBinding binding;
+    private ArrayList<File> list;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        binding = FragmentGalleryBinding.inflate(inflater, container, false);
+        binding = FragmentVideoBinding.inflate(inflater, container, false);
+        View view = binding.getRoot();
         runTimePermissions();
 
         binding.searchview.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -56,47 +60,52 @@ public class GalleryFragment extends Fragment {
             }
         });
 
-        return binding.getRoot();
+
+        return view;
     }
 
     private void runTimePermissions() {
         Dexter.withActivity(getActivity())
-                .withPermissions(Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO)
-                .withListener(new MultiplePermissionsListener() {
+                .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                .withListener(new PermissionListener() {
                     @Override
-                    public void onPermissionsChecked(MultiplePermissionsReport report) {
-                        new Handler().postDelayed(() -> {
-                            disPlayImages();
-                            binding.progressBar2.setVisibility(View.INVISIBLE);
-                        }, 2000);
+                    public void onPermissionGranted(PermissionGrantedResponse response) {
+                        disPlayVideos();
                     }
 
                     @Override
-                    public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {
+                    public void onPermissionDenied(PermissionDeniedResponse response) {
+
+                    }
+
+                    @Override
+                    public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
                         token.continuePermissionRequest();
                     }
                 }).check();
     }
 
-    private void disPlayImages() {
-        binding.imagerclv.setLayoutManager(new GridLayoutManager(getContext(), 2));
-        binding.imagerclv.setHasFixedSize(true);
-        imageList = new ArrayList<>();
-        imageList = findImages(Environment.getExternalStorageDirectory());
-        binding.imagerclv.setAdapter(new ImageAdapter(imageList, getContext()));
+    void disPlayVideos(){
+        binding.videorclv.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.videorclv.setHasFixedSize(true);
+        list = new ArrayList<>();
+        list = findSong(Environment.getExternalStorageDirectory());
+        binding.videorclv.setAdapter(new VideoAdapter(list, getContext()));
+
+
     }
 
-    public ArrayList<File> findImages(File file){
+    public ArrayList<File> findSong(File file){
         ArrayList<File> list = new ArrayList<>();
         File[] files = file.listFiles();
 
         try{
             for(File singleFile : files){
                 if(singleFile.isDirectory() && !singleFile.isHidden()){
-                    list.addAll(findImages(singleFile));
+                    list.addAll(findSong(singleFile));
                 }
                 else{
-                    if(singleFile.getName().endsWith(".jpg") || singleFile.getName().endsWith(".png") || singleFile.getName().endsWith(".jpeg")){
+                    if(singleFile.getName().endsWith(".mp4")){
                         list.add(singleFile);
                     }
                 }
@@ -110,21 +119,19 @@ public class GalleryFragment extends Fragment {
 
     private void search(String str) {
         ArrayList<File> arrayList = new ArrayList<>();
-        for (File singleFile : imageList) {
+        for (File singleFile : list) {
             if (singleFile.getName().toLowerCase().contains(str.toLowerCase())) {
                 arrayList.add(singleFile);
             }
         }
 
-        ImageAdapter ad = new ImageAdapter(arrayList, getContext());
-        binding.imagerclv.setAdapter(ad);
+        VideoAdapter ad = new VideoAdapter(arrayList, getContext());
+        binding.videorclv.setAdapter(ad);
     }
-
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
     }
-
 }

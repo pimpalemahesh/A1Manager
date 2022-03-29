@@ -4,14 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".Activities.VideoViewActivity">
 
-
-    <Button
-        android:id="@+id/Download"
-        android:layout_width="wrap_content"
+    <VideoView
+        android:id="@+id/video"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
